@@ -20,3 +20,9 @@
   when:
     - squid_http.intercept
     - squid_transparent_proxy_ferm
+
+- name: Enable Squid on startup
+  ansible.builtin.service:
+    name: squid
+    enabled: true
+    state: started
