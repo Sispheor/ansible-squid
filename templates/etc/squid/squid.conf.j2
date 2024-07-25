@@ -122,3 +122,8 @@ shutdown_lifetime {{ squid_shutdown_lifetime }}
 {% if (squid_suppress_version is defined and squid_suppress_version) or squid_suppress_version is not defined %}
 httpd_suppress_version_string on
 {% endif %}
+
+{% if squid_workers is defined %}
+# Workers
+workers {{ squid_workers }}
+{% endif %}
